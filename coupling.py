@@ -629,34 +629,34 @@ if __name__ == '__main__':
 # 7th order example (P. 300, Sec. 8.3.1, R. J. Cameron et al.)
 #==============================================================================
 
-    N = 7
-    poles = np.array([1.2576, -0.1546 - 0.9218j, -0.1546 + 0.9218j])
-#     poles = np.array([-3,3])
-    eps = 6.0251j; eps_R = 1
-#    poles = np.array([])
-    F, P = Chebyshev_gen(N, poles)
-    plot_rational(F, P, x_min= -1.1, x_max=1.1, x_num=1000)
-
-    F = w_to_s(F, coef_norm=True)
-    P = w_to_s(P, coef_norm=True)
-
-    print 'F:', '\n', F; print 'P:', '\n', P
-    E, roots_E = poly_E(eps, eps_R, F, P)
-    print 'E:', '\n', E
-
-#    F1, P1, E1 = dual_band(F, P, E, 0.4)
-
-    plot_mag(eps, eps_R, F, P, E, w_min= -2, w_max=2, w_num=500, dB=True,
-             dB_limit= -40, plot=True)
-    plot_delay(roots_E)
-
-    # From now onwards, unlike the Cameron's example, this filter is doubly terminated
-    M, Rs, Rl = coupling_N(F, P, E, eps, eps_R)
-    print 'M:', '\n', M.real
-    print 'Rs:', Rs
-    print 'Rl:', Rl
-
-    MN_to_Sparam(M, Rs, Rl, w_min= -3, w_max=3, w_num=500, dB=True, dB_limit= -40)
+#     N = 7
+#     poles = np.array([1.2576, -0.1546 - 0.9218j, -0.1546 + 0.9218j])
+# #     poles = np.array([-3,3])
+#     eps = 6.0251j; eps_R = 1
+# #    poles = np.array([])
+#     F, P = Chebyshev_gen(N, poles)
+#     plot_rational(F, P, x_min= -1.1, x_max=1.1, x_num=1000)
+#
+#     F = w_to_s(F, coef_norm=True)
+#     P = w_to_s(P, coef_norm=True)
+#
+#     print 'F:', '\n', F; print 'P:', '\n', P
+#     E, roots_E = poly_E(eps, eps_R, F, P)
+#     print 'E:', '\n', E
+#
+# #    F1, P1, E1 = dual_band(F, P, E, 0.4)
+#
+#     plot_mag(eps, eps_R, F, P, E, w_min= -2, w_max=2, w_num=500, dB=True,
+#              dB_limit= -40, plot=True)
+#     plot_delay(roots_E)
+#
+#     # From now onwards, unlike the Cameron's example, this filter is doubly terminated
+#     M, Rs, Rl = coupling_N(F, P, E, eps, eps_R)
+#     print 'M:', '\n', M.real
+#     print 'Rs:', Rs
+#     print 'Rl:', Rl
+#
+#     MN_to_Sparam(M, Rs, Rl, w_min= -3, w_max=3, w_num=500, dB=True, dB_limit= -40)
 
 #==============================================================================
 # 4th order example (P. 228, Sec. 6.3.2, R. J. Cameron et al.)
@@ -1013,3 +1013,4 @@ if __name__ == '__main__':
 # TODO convert the given coupling matrix to lowpass, highpass, bandpass, etc
 # TODO obtain the formula for S11 and S12 in term of M matrix
 # TODO include external quality factor value so that it can match Hong's results
+# TODO write a funtion for optimization technique to ding mutual coupling values
