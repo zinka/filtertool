@@ -155,7 +155,7 @@ def RLC2S_LPF(
                     ]
                 )
                 cnx.append(
-                    [(ckt_elements[2 * i], 1), (port2, 0),]
+                    [(ckt_elements[2 * i], 1), (port2, 0), ]
                 )
 
         else:  # in between
@@ -297,7 +297,6 @@ def hairpin_BPF(g, FBW):
     Qo = g[-2] * g[-1] / FBW
     return Qi, M, Qo
 
-
 # ==============================================================================
 
 
@@ -382,7 +381,6 @@ if __name__ == "__main__":
     g = Chebyshev_g(LAr=0.1, LAs=40, Ws=3)[1]
     RLC2S_LPF(g, Wstart=0.0001, Wstop=3, npoints=1001, dB_limit=-70, plot=False)
     hairpin_BPF(g, FBW=0.2)
-
 
 # ==========================================================================
 # Notes Section

@@ -1,10 +1,11 @@
 from PyQt4 import QtCore, QtGui
 
+
 class Widget(QtGui.QWidget):
 
     def __init__(self, *args, **kwargs):
         super(Widget, self).__init__(*args, **kwargs)
-        self.resize(800,600)
+        self.resize(800, 600)
 
         self.vlayout = QtGui.QVBoxLayout(self)
         self.table = QtGui.QTableView()
@@ -20,7 +21,7 @@ class Widget(QtGui.QWidget):
 
         self.vlayout.addLayout(self.hlayout)
 
-        self.model = QtGui.QStandardItemModel(10,10,self)
+        self.model = QtGui.QStandardItemModel(10, 10, self)
         self.table.setModel(self.model)
 
         self.list1.setModel(self.model)

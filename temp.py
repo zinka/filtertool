@@ -98,13 +98,11 @@ def stepped_impedance(LC, Z0_high, Z0_low, lg_high, lg_low, fc, ladder_type="LC"
         ladder_type="CL",
     )
 
-
 # def g2KJ_HP(g, LC_values, ZY0=1, ZYL=1, plot):
 #
 # def g2KJ_BP(g, LC_values, ZY0=1, ZYL=1, plot):
 #
 # def g2KJ_BS(g, LC_values, ZY0=1, ZYL=1, plot):
-
 
 # def g2LC_LPF(g, Z0=50, fc=1e9, ladder_type="LC"):  # only for LPFs
 #     if ladder_type == "LC":
@@ -141,7 +139,6 @@ def g2LC(g, Z0=50, fc=1e9, ladder_type="LC"):  # only for LPFs
 def stub_LPF():
     # Implement Fig. 5.3 from J. S. Hong
     pass
-
 
 # ==========================================================================
 # J. S. Hong, stub LPF
